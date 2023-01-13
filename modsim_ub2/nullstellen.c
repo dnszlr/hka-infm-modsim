@@ -61,7 +61,7 @@ double Sekanten(double (*f)(double), double x0, double x1) {
   int count = 0;
   //Kopfzeile für die Ausgabe
   printf("  n:                   xn                 xn-1                xn+1          \n"); 
-  while( true ){
+  while(1){
     printf("  %d:       %.14lf            %.14lf                %.14lf         \n", count, xn, xnm1, xnp1);
     xnp1 = (xnm1 - (f(xnm1) * ((xn - xnm1)/(f(xn) - f(xnm1)))));
     if(abs((abs(xnp1) - abs(xn))) <= 0.0000000000001){
@@ -81,7 +81,7 @@ double Newton(double (*f)(double), double (*dfdx)(double), double x0) {
   int count = 0;
   //Kopfzeile für die Ausgabe
   printf("  n:                   xn                        xn+1          \n"); 
-  while ( true ) { // max 100 calculation
+  while (1) { // max 100 calculation
     printf("  %d:       %.14lf            %.14lf                      \n", count, xn, xnp1);
     xn = xnp1;
     //tmp = xnp1;
